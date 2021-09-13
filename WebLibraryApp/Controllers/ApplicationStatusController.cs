@@ -10,7 +10,7 @@ using WEB_API.Models.ApplicationStatus;
 
 namespace WEB_API.Controllers
 {
-   // [EnableCors("angular")]
+    [EnableCors("angular")]
     [Route("api/[controller]")]
     [ApiController]
     public class ApplicationStatusController : ControllerBase
