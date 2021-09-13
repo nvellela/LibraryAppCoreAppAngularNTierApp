@@ -1,0 +1,64 @@
+<h1 class="text-center">Application Form</h1>
+<div id="applyform" [ngClass]="disabled">
+  <div class="row">
+    <div class="col-md-6">
+      <label for="name">Applicants First Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Name" [ngModel]="currentApplication.applicant.name"
+        (ngModelChange)="currentApplication.applicant.name = $event">
+    </div>
+    <div class="col-md-6">
+      <label for="surname">Applicants Surname</label>
+      <input type="text" class="form-control" id="surname" placeholder="Surname"
+        [ngModel]="currentApplication.applicant.surname"
+        (ngModelChange)="currentApplication.applicant.surname = $event">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <label for="birth">Applicants Birthday</label>
+      <input type="date" class="form-control" id="birth" placeholder="Birthday"
+        [ngModel]="currentApplication.applicant.birthday"
+        (ngModelChange)="currentApplication.applicant.birthday = $event">
+    </div>
+    <div class="col-md-6">
+      <label for="email">Contact Email</label>
+      <input type="email" class="form-control" id="email" placeholder="Email"
+        [ngModel]="currentApplication.applicant.email" (ngModelChange)="currentApplication.applicant.email = $event">
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6">
+      <label for="phone">Contact Number</label>
+      <input type="text" class="form-control" id="phone" placeholder="Number"
+        [ngModel]="currentApplication.applicant.phone_number"
+        (ngModelChange)="currentApplication.applicant.phone_number = $event">
+    </div>
+    <div class="col-md-6">
+      <label for="gradeselect">Grade</label>
+      <select id="gradeselect" class="form-control" [ngModel]="currentApplication.grade_id"
+        (ngModelChange)="currentApplication.grade_id = $event">
+        <option value="" selected disabled>--Select A Grade--</option>
+        <option *ngFor='let grade of grades.result_set' [value]="grade.id">{{grade.name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <label for="year">School Year</label>
+      <input type="number" min class="form-control" id="year" placeholder="School Year"
+        [ngModel]="currentApplication.school_year" (ngModelChange)="currentApplication.school_year = $event" min="2022">
+    </div>
+  </div>
+  <div>
+    <div class="row">
+      <div class="d-grid p-2">
+        <button class="btn btn-primary btn-block" type="button" (click)="SubmitApplication()">Submit
+          Application</button>
+        <div [ngClass]="load" align="center">
+          <strong>Working...</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
