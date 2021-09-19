@@ -5,6 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Functions\Crud\**" />
+    <EmbeddedResource Remove="Functions\Crud\**" />
+    <None Remove="Functions\Crud\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Functions\Interfaces\ICRUD.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.design" Version="5.0.9">
       <PrivateAssets>all</PrivateAssets>

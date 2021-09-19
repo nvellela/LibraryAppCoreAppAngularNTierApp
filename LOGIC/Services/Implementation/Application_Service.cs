@@ -16,7 +16,7 @@ namespace LOGIC.Services.Implementation
     /// </summary>
     public class Application_Service : IApplication_Service
     {
-        private ICRUD _crud = new CRUD();
+        //private ICRUD _crud = new CRUD();
         private IApplication_Operations _application_Operations = new Application_Operations();
 
         /// <summary>

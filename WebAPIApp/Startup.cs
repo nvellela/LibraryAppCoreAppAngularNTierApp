@@ -1,3 +1,4 @@
+//using LOGIC.Services.Implementation;
 using LOGIC.Services.Implementation;
 using LOGIC.Services.Interfaces;
 using Microsoft.AspNetCore.Builder;
@@ -36,10 +37,12 @@ namespace WebAPIApp
             });
 
             #region CUSTOM SERVICES [D-I]
-            services.AddScoped<IApplicant_Service, Applicant_Service>();
-            services.AddScoped<IGrade_Service, Grade_Service>();
-            services.AddScoped<IApplication_Service, Application_Service>();
-            services.AddScoped<IApplicationStatus_Service, ApplicationStatus_Service>();
+
+            services.AddScoped<IStudent_Service, Student_Service>();
+            //services.AddScoped<IApplicant_Service, Applicant_Service>();
+            //services.AddScoped<IGrade_Service, Grade_Service>();
+            //services.AddScoped<IApplication_Service, Application_Service>();
+            //services.AddScoped<IApplicationStatus_Service, ApplicationStatus_Service>();
             #endregion
 
             #region CORS
